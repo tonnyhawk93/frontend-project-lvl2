@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`genDiff Возращает правильный diff у одинаковых json файлов 1`] = `
+"{
+    follow: false
+    host: hexlet.io
+    proxy: 123.234.53.22
+    timeout: 50
+}"
+`;
+
+exports[`genDiff Возращает правильный diff у одинаковых yaml файлов 1`] = `
+"{
+    follow: false
+    host: hexlet.io
+    proxy: 123.234.53.22
+    timeout: 50
+}"
+`;
+
+exports[`genDiff Возращает правильный diff у одинаковых yml файлов 1`] = `
+"{
+    follow: false
+    host: hexlet.io
+    proxy: 123.234.53.22
+    timeout: 50
+}"
+`;
+
+exports[`genDiff Возращает правильный diff у разных json файлов 1`] = `
+"{
+  - follow: false
+    host: hexlet.io
+  - proxy: 123.234.53.22
+  - timeout: 50
+  + timeout: 20
+  + verbose: true
+}"
+`;
+
+exports[`genDiff Возращает правильный diff у разных yaml файлов 1`] = `
+"{
+  - follow: false
+    host: hexlet.io
+  - proxy: 123.234.53.22
+  - timeout: 50
+  + timeout: 20
+  + verbose: true
+}"
+`;
+
+exports[`genDiff Возращает правильный diff у разных yml файлов 1`] = `
+"{
+  - follow: false
+    host: hexlet.io
+  - proxy: 123.234.53.22
+  - timeout: 50
+  + timeout: 20
+  + verbose: true
+}"
+`;
