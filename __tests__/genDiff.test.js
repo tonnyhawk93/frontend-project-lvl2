@@ -1,6 +1,7 @@
 import { fileURLToPath } from 'url';
 import path from 'path';
 import genDiff from '../lib/genDiff';
+import { plain } from '../lib/formaters/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,50 +15,6 @@ const ymlFilepath1 = getFixturePath('file1.yml');
 const ymlFilepath2 = getFixturePath('file2.yml');
 const jsonComplicatedFile1 = getFixturePath('complicatedFile1.json');
 const jsonComplicatedFile2 = getFixturePath('complicatedFile2.json');
-const res = `{
-    common: {
-      + follow: false
-        setting1: Value 1
-      - setting2: 200
-      - setting3: true
-      + setting3: null
-      + setting4: blah blah
-      + setting5: {
-            key5: value5
-        }
-        setting6: {
-            doge: {
-              - wow: 
-              + wow: so much
-            }
-            key: value
-          + ops: vops
-        }
-    }
-    group1: {
-      - baz: bas
-      + baz: bars
-        foo: bar
-      - nest: {
-            key: value
-        }
-      + nest: str
-    }
-  - group2: {
-        abc: 12345
-        deep: {
-            id: 45
-        }
-    }
-  + group3: {
-        deep: {
-            id: {
-                number: 45
-            }
-        }
-        fee: 100500
-    }
-}`;
 
 describe('genDiff', () => {
   it('Возращает правильный diff у разных json файлов', () => {
@@ -79,6 +36,9 @@ describe('genDiff', () => {
     expect(genDiff(ymlFilepath1, ymlFilepath1)).toMatchSnapshot();
   });
   it('Возращает правильный diff у сложных json файлов', () => {
-    expect(genDiff(jsonComplicatedFile1, jsonComplicatedFile2)).toEqual(res);
+    expect(genDiff(jsonComplicatedFile1, jsonComplicatedFile2)).toMatchSnapshot();
+  });
+  it('Правильно работает плоское форматирование у сложных json файлов', () => {
+    expect(genDiff(jsonComplicatedFile1, jsonComplicatedFile2, plain)).toMatchSnapshot();
   });
 });
