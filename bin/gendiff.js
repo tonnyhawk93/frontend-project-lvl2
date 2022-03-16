@@ -3,7 +3,6 @@
 import { Command } from 'commander';
 import { resolve } from 'path';
 import genDiff from '../lib/genDiff.js';
-import { selectFormaterByName } from '../lib/formaters/index.js';
 
 const program = new Command();
 
@@ -17,8 +16,7 @@ program
   .action((filepath1, filepath2) => {
     const absoluteFilePath1 = resolve(process.cwd(), filepath1);
     const absoluteFilePath2 = resolve(process.cwd(), filepath2);
-    const formater = selectFormaterByName(program.opts().format);
-    const diff = genDiff(absoluteFilePath1, absoluteFilePath2, formater);
+    const diff = genDiff(absoluteFilePath1, absoluteFilePath2, program.opts().format);
     /* eslint-disable no-console */
     console.log(diff);
     /* eslint-enable no-console */
