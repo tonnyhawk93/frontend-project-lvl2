@@ -163,6 +163,8 @@ exports[`genDiff Возращает правильный diff у сложных 
 }"
 `;
 
+exports[`genDiff Правильно работает json форматер у файлов 1`] = `"{\\"common\\":[{\\"value\\":{\\"follow\\":[{\\"value\\":false,\\"type\\":\\"+\\"}],\\"setting1\\":[{\\"value\\":\\"Value 1\\",\\"type\\":\\" \\"}],\\"setting2\\":[{\\"value\\":200,\\"type\\":\\"-\\"}],\\"setting3\\":[{\\"value\\":true,\\"type\\":\\"-\\"},{\\"value\\":null,\\"type\\":\\"+\\"}],\\"setting4\\":[{\\"value\\":\\"blah blah\\",\\"type\\":\\"+\\"}],\\"setting5\\":[{\\"value\\":{\\"key5\\":\\"value5\\"},\\"type\\":\\"+\\"}],\\"setting6\\":[{\\"value\\":{\\"doge\\":[{\\"value\\":{\\"wow\\":[{\\"value\\":\\"\\",\\"type\\":\\"-\\"},{\\"value\\":\\"so much\\",\\"type\\":\\"+\\"}]},\\"type\\":\\" \\"}],\\"key\\":[{\\"value\\":\\"value\\",\\"type\\":\\" \\"}],\\"ops\\":[{\\"value\\":\\"vops\\",\\"type\\":\\"+\\"}]},\\"type\\":\\" \\"}]},\\"type\\":\\" \\"}],\\"group1\\":[{\\"value\\":{\\"baz\\":[{\\"value\\":\\"bas\\",\\"type\\":\\"-\\"},{\\"value\\":\\"bars\\",\\"type\\":\\"+\\"}],\\"foo\\":[{\\"value\\":\\"bar\\",\\"type\\":\\" \\"}],\\"nest\\":[{\\"value\\":{\\"key\\":\\"value\\"},\\"type\\":\\"-\\"},{\\"value\\":\\"str\\",\\"type\\":\\"+\\"}]},\\"type\\":\\" \\"}],\\"group2\\":[{\\"value\\":{\\"abc\\":12345,\\"deep\\":{\\"id\\":45}},\\"type\\":\\"-\\"}],\\"group3\\":[{\\"value\\":{\\"deep\\":{\\"id\\":{\\"number\\":45}},\\"fee\\":100500},\\"type\\":\\"+\\"}]}"`;
+
 exports[`genDiff Правильно работает плоское форматирование у сложных json файлов 1`] = `
 "Property 'common.follow' was added with value: false
 Property 'common.setting2' was removed

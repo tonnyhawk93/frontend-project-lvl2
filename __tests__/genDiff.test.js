@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'url';
 import path from 'path';
 import genDiff from '../lib/genDiff';
-import { plain } from '../lib/formaters/index.js';
+import { plain, json } from '../lib/formaters/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,5 +40,8 @@ describe('genDiff', () => {
   });
   it('Правильно работает плоское форматирование у сложных json файлов', () => {
     expect(genDiff(jsonComplicatedFile1, jsonComplicatedFile2, plain)).toMatchSnapshot();
+  });
+  it('Правильно работает json форматер у файлов', () => {
+    expect(genDiff(jsonComplicatedFile1, jsonComplicatedFile2, json)).toMatchSnapshot();
   });
 });
